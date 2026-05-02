@@ -126,15 +126,15 @@ async function channel(url, urlUserId, urlToken) {
   printLoginInfo(resObj)
   // printRed(resObj.url)
   printGreen(`添加节目缓存 ${pid}`)
-  // 缓存有效时长
-  let addTime = 3 * 60 * 60 * 1000
+  // 缓存有效时长 (修改为30分钟)
+  let addTime = 30 * 60 * 1000
   // 节目调整
   if (resObj.url == "") {
     addTime = 1 * 60 * 1000
   }
   // 加入缓存
   urlCache[pid] = {
-    // 有效期3小时 节目调整时改为1分钟
+    // 有效期30分钟 节目调整时改为1分钟
     valTime: Date.now() + addTime,
     url: resObj.url,
     content: resObj.content,
