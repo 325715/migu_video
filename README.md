@@ -110,6 +110,26 @@ docker run -p 1234:1234 --name migu_video develop767/migu_video
 docker run -p 3000:3000 -e mport=3000 -e mhost="http://localhost:3000" --name migu_video develop767/migu_video
 ```
 
+#### 高级运行（映射外部 3257 端口、屏蔽体育赛事、挂载本地 appUtils.js）
+
+若需要映射外部 `3257` 端口，屏蔽 `PE` 分类，并用当前目录下的 `appUtils.js` 覆盖镜像内文件，可根据操作系统执行以下一行命令：
+
+##### Windows PowerShell
+```shell
+docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "${PWD}/appUtils.js:/migu/utils/appUtils.js" --name migu_video --restart unless-stopped develop767/migu_video
+```
+
+##### Linux / Git Bash / macOS
+```shell
+docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "$(pwd)/appUtils.js:/migu/utils/appUtils.js" --name migu_video --restart unless-stopped develop767/migu_video
+```
+
+##### Windows CMD (命令提示符)
+```shell
+docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "%cd%\appUtils.js:/migu/utils/appUtils.js" --name migu_video --restart unless-stopped develop767/migu_video
+```
+
+
 ### 构建
 
 若需要手动构建镜像，可以使用以下命令
