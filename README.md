@@ -121,7 +121,7 @@ docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "${PWD}/appUtils.js:/migu/
 
 ##### Linux / Git Bash / macOS
 ```shell
-docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "$(pwd)/appUtils.js:/migu/utils/appUtils.js" --name migu_video --restart unless-stopped develop767/migu_video
+docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "$(pwd)/appUtils.js:/migu/utils/appUtils.js" --name migu-video --restart unless-stopped develop767/migu_video
 ```
 
 ##### Windows CMD (命令提示符)
