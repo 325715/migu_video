@@ -101,13 +101,13 @@ docker pull develop767/migu_video:latest
 ### 运行
 
 ```shell
-docker run -p 1234:1234 --name migu_video develop767/migu_video
+docker run -p 1234:1234 --name migu-video develop767/migu_video
 ```
 
 若需要修改配置，可以使用以下命令
 
 ```shell
-docker run -p 3000:3000 -e mport=3000 -e mhost="http://localhost:3000" --name migu_video develop767/migu_video
+docker run -p 3000:3000 -e mport=3000 -e mhost="http://localhost:3000" --name migu-video develop767/migu_video
 ```
 
 #### 高级运行（映射外部 3257 端口、屏蔽体育赛事、挂载本地 appUtils.js）
@@ -116,7 +116,7 @@ docker run -p 3000:3000 -e mport=3000 -e mhost="http://localhost:3000" --name mi
 
 ##### Windows PowerShell
 ```shell
-docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "${PWD}/appUtils.js:/migu/utils/appUtils.js" --name migu_video --restart unless-stopped develop767/migu_video
+docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "${PWD}/appUtils.js:/migu/utils/appUtils.js" --name migu-video --restart unless-stopped develop767/migu_video
 ```
 
 ##### Linux / Git Bash / macOS
@@ -126,7 +126,7 @@ docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "$(pwd)/appUtils.js:/migu/
 
 ##### Windows CMD (命令提示符)
 ```shell
-docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "%cd%\appUtils.js:/migu/utils/appUtils.js" --name migu_video --restart unless-stopped develop767/migu_video
+docker run -d -p 3257:1234 -e mignoreCategory="PE" -v "%cd%\appUtils.js:/migu/utils/appUtils.js" --name migu-video --restart unless-stopped develop767/migu_video
 ```
 
 
